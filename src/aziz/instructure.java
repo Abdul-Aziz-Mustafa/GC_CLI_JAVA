@@ -66,7 +66,7 @@ public class instructure extends person implements comments {
             _assessment.add(new assessment(true, s, 1));
 
         } else {
-            System.out.println("wrong input hi hi hi");
+            System.out.println("wrong input ");
         }
         System.out.println("welcome " + get_name());
 
