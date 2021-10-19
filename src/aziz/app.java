@@ -101,7 +101,7 @@ public class app {
                         int day = sci.nextInt();
                         switch (day) {
                             case 1 -> sob.view_mats(slide_content, video);
-                            case 2 -> sob.vassessment(teachers_assessment,  assessment_of_students_list);
+                            case 2 -> sob.vassessments(teachers_assessment);
                             case 3 -> sob.submit_assessment(teachers_assessment, assessment_of_students_list);
                             case 4 -> sob.view_grade(assessment_of_students_list);
                             case 5 -> sob.view_comments(list_of_comments);

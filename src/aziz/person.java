@@ -80,10 +80,10 @@ public class person {
             for (int i = 0; i < getNumber_of_slides(); i++) {
                 System.out.println("enter content of slide");
                 String con_slide = sc.nextLine();
-                s.append("Slide").append(i).append(":").append(con_slide).append("\n");
+                s.append("Slide ").append(i).append(":").append(con_slide).append("\n");
 
             }
-            slide_content.add(s + " \n Date of upload:" + date() +
+            slide_content.add(s + "Date of upload:" + date() +
                     "\n Uploaded by: " + _name);
         }
 

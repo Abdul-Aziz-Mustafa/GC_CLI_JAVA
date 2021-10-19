@@ -86,10 +86,10 @@ public class instructure extends person implements comments {
 
     public void view_assessments(ArrayList<assessment> _assessment) {
         for (assessment i : _assessment) {
-            if (!i.status) {
+
                 System.out.println(i.id + ":" + i.content);
                 System.out.println("Max Marks : " + i.marks);
-            }
+
         }
 
     }

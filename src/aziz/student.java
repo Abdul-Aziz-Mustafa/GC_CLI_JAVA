@@ -37,6 +37,12 @@ public class student extends person implements comments {
         }
 
     }
+    public void vassessments(ArrayList<assessment> assessment_list_from_teacher){
+        for (assessment i: assessment_list_from_teacher){
+            System.out.print("ID: "+i.id+" "+i.content);
+            System.out.println(" "+i.marks);
+        }
+    }
     ArrayList<assessment> Assessment_of_students= new ArrayList<>();
     public void vassessment(ArrayList<assessment> assessment_list_from_teacher,  TreeMap<Integer, ArrayList<assessment>> assessment_of_students_list) {
         assessment j;
@@ -52,9 +58,10 @@ public class student extends person implements comments {
 
         System.out.println("pending assingments");
         for (assessment i : Assessment_of_students) {
-            if(!i.status) c=true;
             if (!i.status && !i.submission_status_student ) {
-                System.out.println(i.id+" "+i.content);
+                System.out.print("ID: "+i.id+" "+i.content);
+                System.out.println(" "+i.marks);
+                c=true;
             }
         }
         if(!c) System.out.println("no pending");
@@ -95,6 +102,7 @@ public class student extends person implements comments {
             }
 //        assessment_of_students_list.get(get_id()).remove(id_of_asg);// still to check if it removes from student list or not
         }
+        c=false;
 
     }
 
@@ -113,6 +121,7 @@ public class student extends person implements comments {
             if (!j.submission_status_prof && j.submission_status_student) {
                 System.out.println("ungraded submission");
                 System.out.println(j.content);
+                System.out.println(j.ans);
             }
         }
 
