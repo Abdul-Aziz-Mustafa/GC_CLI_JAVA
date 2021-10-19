@@ -63,7 +63,6 @@ public class person {
 
     class slide extends mats {
         private int number_of_slides;
-        ArrayList<String> slide_content_PAGES;
 
         public int getNumber_of_slides() {
             return number_of_slides;
@@ -100,6 +99,9 @@ public class person {
             if (file_name.contains(".mp4")) {
                 video.add(" Title of video:" + vvt + " \n Video file: " + file_name + " \n Date of upload:" + date() +
                         "\n Uploaded by: " + _name);
+            }
+            else {
+                System.out.println("wrong format");
             }
         }
 
