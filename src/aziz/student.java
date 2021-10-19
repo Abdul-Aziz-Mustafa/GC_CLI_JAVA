@@ -57,6 +57,7 @@ public class student extends person implements comments {
                 System.out.println(i.id+" "+i.content);
             }
         }
+        if(!c) System.out.println("no pending");
 
 
     }
@@ -94,9 +95,7 @@ public class student extends person implements comments {
             }
 //        assessment_of_students_list.get(get_id()).remove(id_of_asg);// still to check if it removes from student list or not
         }
-        else{
-            System.out.println("no pending ");
-        }
+
     }
 
     public void view_grade(TreeMap<Integer, ArrayList<assessment>> assessment_of_students_list) {
@@ -110,9 +109,9 @@ public class student extends person implements comments {
             }
 
         }
-        System.out.println("ungraded submission");
         for (assessment j : assessment_of_students_list.get(get_id())) {
             if (!j.submission_status_prof && j.submission_status_student) {
+                System.out.println("ungraded submission");
                 System.out.println(j.content);
             }
         }

@@ -107,7 +107,6 @@ public class app {
                             case 5 -> sob.view_comments(list_of_comments);
                             case 6 -> sob.add_comments(list_of_comments);
                             case 7 -> a = false;
-                            case 9 ->System.out.println(assessment_of_students_list.get(0).get(0).submission_status_student);
 
                         }
                     }

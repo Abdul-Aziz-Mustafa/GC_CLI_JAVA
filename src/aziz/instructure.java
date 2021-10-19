@@ -109,7 +109,7 @@ public class instructure extends person implements comments {
                 Integer key = entry.getKey();
                 ArrayList<assessment> value = entry.getValue();
                 for (assessment k : value) {
-                    if (k.id == assessment_id) {
+                    if (k.id == assessment_id && k.submission_status_student) {
                         System.out.println(key + ": S" + key);
                         ch = true;
                     }
@@ -125,9 +125,10 @@ public class instructure extends person implements comments {
             int st_id = sci.nextInt();
 
             for (assessment j : submissions_list.get(st_id)) {
-                System.out.println("submission" + ": " + j.ans);
-                System.out.println(j.submission_status_student);
-                if (j.submission_status_student) {
+//                System.out.println(j.submission_status_student);
+                if (j.submission_status_student && j.id==assessment_id) {
+                    System.out.println("submission" + ": " + j.ans);
+
                     j.submission_status_prof = true;
                     System.out.println("max marks");
                     System.out.println(j.marks);
@@ -151,9 +152,12 @@ public class instructure extends person implements comments {
 
         System.out.println("Enter id of assignment to close: ");
         int _close = sci.nextInt();
+        _assessment.get(_close).status=true;
         for (int j = 0; j < submissions_list.size(); j++) {
             for (assessment i : submissions_list.get(j)) {
-                i.status = true;
+                if (i.id == _close) {
+                    i.status = true;
+                }
             }
 
 
